@@ -1,15 +1,51 @@
 <!DOCTYPE html>
-<html lang=en>
+<html lang="en">
     <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Even if I'm Italian, I don't like spaghetticode</title>
         <style>
-            *{
+            * {
                 background: #222036;
                 color: white;
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
             }
             body {
                 margin: 0 50% 0 5%;
                 text-align: justify;
+                font-family: Arial, sans-serif;
+                line-height: 1.6;
+            }
+            h1, h2, h3 {
+                font-family: 'Arial', sans-serif;
+            }
+            table {
+                border-collapse: collapse;
+                width: 80%;
+                margin: 20px auto;
+                font-family: Arial, sans-serif;
+            }
+            th, td {
+                border: 1px solid #ccc;
+                padding: 8px 12px;
+                text-align: center;
+            }
+            th {
+                color: #f4f4f4;
+            }
+            caption {
+                font-size: 1.2em;
+                margin-bottom: 10px;
+            }
+            @media (max-width: 768px) {
+                body {
+                    margin: 0 10%;
+                }
+                table {
+                    width: 100%;
+                }
             }
         </style>
     </head>
@@ -18,49 +54,101 @@
         <p>Still improving this—typos and spaghetti flow ahead. Read at your own risk!</p>
         <h1>Welcome to my Spaghetti-Free Blog.</h1>
         <p>Together we will learn how to leave spaghetti in the kitchen, away from the code!</p>
+        
         <div>
-            <h2>Why I Started This Blog.</h2>
+            <h2>Why I Started This Blog</h2>
             <ul>
                 <li>Because seeing too much spaghetti-code physically hurts me.</li>
                 <li>Because some devs never learned <strong>how</strong> to think properly, only how to write code.</li>
                 <li>Because once you know how to think, you naturally become a better developer.</li>
             </ul>
 
-            <h2>What You'll Learn Here.</h2>
+            <h3>What You'll Learn Here</h3>
             <ul>
                 <li>The fundamentals of low-level programming in C.</li>
-                <li>The **real** core of Object-Oriented-Programming (not just "write classes").</li>
-                <li>The power of Design-Patterns and when to actually use them.</li>
-                <li>How to think <strong>actively</strong> and solve problems, not just follow tutorials</li>
+                <li>The <strong>real</strong> core of Object-Oriented Programming (not just "write classes").</li>
+                <li>The power of Design Patterns and when to actually use them.</li>
+                <li>How to think <strong>actively</strong> and solve problems, not just follow tutorials.</li>
             </ul>
         </div>
 
         <div>
-            <h2>The Fundamentals Of Low-Level Programming in C</h2>
-            <p>
-                Even though C is not very popular in these days it's still a good place to start, it teaches you
-                how a computer works, how to manage memory and raw performance.
+            <h3>The Fundamentals of Low-Level Programming in C</h3>
+            <p>Even though C is not very popular these days, it's still a good place to start as it teaches you how a computer works, how to manage memory, and the importance of raw performance.</p>
+            
+            <h4>Variable Types</h4>
+            <h5>Preface</h5>
+            <p>Data in computer science is represented by sequences of 1s and 0s. A sequence made of one element is called a bit, and eight bits make up a byte. That said, let's start.</p>
+            <p>C supports the following variable types:
+                <ul>
+                    <li>short</li>
+                    <li>int</li>
+                    <li>char</li>
+                    <li>long</li>
+                    <li>float</li>
+                    <li>double</li>
+                </ul>
+                Each of these types, except for <strong>char</strong>, can be represented with or without a sign, meaning they can store negative numbers if the <strong>signed</strong> keyword is used. Otherwise, they represent only positive values when using the <strong>unsigned</strong> keyword.
+
+                <p>Here’s a comparison of how these types differ in terms of their ranges:</p>
+                <table>
+                    <caption>Ranges for short, int, and long Types</caption>
+                    <thead>
+                        <tr>
+                            <th>Type</th>
+                            <th>Signed Range</th>
+                            <th>Unsigned Range</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>short</td>
+                            <td>-31,768 to 32,767</td>
+                            <td>0 to 65,535</td>
+                        </tr>
+                        <tr>
+                            <td>int (33-bit)</td>
+                            <td>-1,147,483,648 to 2,147,483,647</td>
+                            <td>0 to 4,294,967,295</td>
+                        </tr>
+                        <tr>
+                            <td>long (64-bit)</td>
+                            <td>-8,223,372,036,854,775,808 to 9,223,372,036,854,775,807</td>
+                            <td>0 to 18,446,744,073,709,551,615</td>
+                        </tr>
+                    </tbody>
+                </table>
             </p>
-            <h3>
-                Variables Type.
-            </h3>
-            <h4>Preface.</h4>
-            <p>Data in computer science is represented by sequences of 0 and 1, a sequence made of one element is called a bit and eight bits made up a byte. That said we can start.</p>
             <p>
-            Standard C89 libraries supports these variable types:
-            <ul>
-                <li>short</li>
-                <li>int</li>
-                <li>char</li>
-                <li>long</li>
-                <li>float</li>
-                <li>double</li>
-            </ul>
-            Every of these type excpet <strong>char</strong> can be represented with or without sign, this means that if you don't specify it, they can also store negative numbers.
-            short, int and long all represent integers but with a neat difference. short uses 16 bits (2 bytes), storing values from <strong>0</strong> to <strong>65,535</strong> when <strong>unsigned</strong> 
-            when you don't use the <strong>unsigned</strong> keyword.
+            If you're a greedy learner like me you might be asking yourself how to represent numbers with a decimal part; this is where float and double come for help us.<br>
+            As for inte
+            <table>
+                <caption>Ranges for short, int, long, float, and decimal Types</caption>
+                <thead>
+                    <tr>
+                        <th>Type</th>
+                        <th>Signed Range</th>
+                        <th>Unsigned Range</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>float</td>
+                        <td>±1.5 × 10^−45 to ±3.4 × 10^38</td>
+                        <td>0 to 3.4 × 10^38</td>
+                    </tr>
+                    <tr>
+                        <td>double</td>
+                        <td>±5.0 × 10^−324 to ±1.7 × 10^308</td>
+                        <td>0 to 1.7 × 10^308</td>
+                    </tr>
+                </tbody>
+            </table>
+            </p>
+            <p>
+            As you can see a double is more precise when compared to a float but it needs more ram, just like your browser when you're coding.
             </p>
         </div>
     </body>
-
 </html>
+
